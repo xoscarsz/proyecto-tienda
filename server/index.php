@@ -185,7 +185,6 @@ switch ($action) {
         try {
             $pdo->beginTransaction();
 
- 
             foreach ($carrito as $item) {
                 $nombreDisp = $item['nombre'];
                 $precioDisp = floatval($item['precio']);
@@ -193,7 +192,6 @@ switch ($action) {
                 $stmtVenta = $pdo->prepare("INSERT INTO ventas (cliente, dispositivo, cantidad, total, fecha) VALUES (?, ?, 1, ?, ?)");
                 $stmtVenta->execute([$clienteNombre, $nombreDisp, $precioDisp, $fecha]);
 
-  
                 $stmtStock = $pdo->prepare("UPDATE productos SET stock = stock - 1 WHERE nombre = ? AND stock >= 1");
                 $stmtStock->execute([$nombreDisp]);
             }
