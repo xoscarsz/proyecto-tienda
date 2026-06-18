@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-// 2. CONFIGURACIÓN DE CONEXIÓN A AIVEN
-$host = 'mysql-aee151-tienda-api-ramirez.j.aivencloud.com';
+// 2. CONFIGURACIÓN DE CONEXIÓN A AIVEN (Editado con IP directa para evitar fallos de DNS)
+$host = '135.125.244.11';
 $db   = 'defaultdb'; 
 $user = 'avnadmin';
 $pass = 'AVNS_TFN4BJdcEpy2mKAGTNH';
