@@ -123,7 +123,7 @@ export const Catalogo = () => {
     <div className="min-h-screen bg-slate-950 text-white font-sans selection:bg-indigo-500/30">
       <header className="border-b border-slate-800/60 bg-slate-900/40 backdrop-blur-xl sticky top-0 z-40 px-8 py-5 flex justify-between items-center">
         <div className="relative group">
-          <h1 className="text-2xl font-black bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent tracking-widest">
+          <h1 className="text-2xl font-black bg-gradient-to-r from-indigo-400 via-yellow-400 to-pink-400 bg-clip-text text-transparent tracking-widest">
             OSCAR PHONES
           </h1>
           {usuario && (
