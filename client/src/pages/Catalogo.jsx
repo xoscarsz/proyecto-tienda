@@ -181,7 +181,7 @@ export const Catalogo = () => {
                   </div>
                   
                   <div className="mt-6 flex items-center justify-between pt-4 border-t border-slate-800/40">
-                    <span className="text-xl font-black text-emerald-400">
+                    <span className="text-xl font-black text-yellow-400">
                       ${Number(tel.precio).toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </span>
                     <button 
