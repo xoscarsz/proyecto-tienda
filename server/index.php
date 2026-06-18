@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-// 2. CONFIGURACIÓN DE CONEXIÓN A AIVEN (Editado con IP directa para evitar fallos de DNS)
-$host = '135.125.244.11';
+// 2. CONFIGURACIÓN DE CONEXIÓN A AIVEN
+$host = 'mysql-aee151-tienda-api-ramirez.j.aivencloud.com';
 $db   = 'defaultdb'; 
 $user = 'avnadmin';
 $pass = 'AVNS_TFN4BJdcEpy2mKAGTNH';
@@ -185,6 +185,7 @@ switch ($action) {
         try {
             $pdo->beginTransaction();
 
+ 
             foreach ($carrito as $item) {
                 $nombreDisp = $item['nombre'];
                 $precioDisp = floatval($item['precio']);
@@ -192,6 +193,7 @@ switch ($action) {
                 $stmtVenta = $pdo->prepare("INSERT INTO ventas (cliente, dispositivo, cantidad, total, fecha) VALUES (?, ?, 1, ?, ?)");
                 $stmtVenta->execute([$clienteNombre, $nombreDisp, $precioDisp, $fecha]);
 
+  
                 $stmtStock = $pdo->prepare("UPDATE productos SET stock = stock - 1 WHERE nombre = ? AND stock >= 1");
                 $stmtStock->execute([$nombreDisp]);
             }
